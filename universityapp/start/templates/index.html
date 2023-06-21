@@ -1,0 +1,39 @@
+<!-- index.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<form action="{% url 'start:index' %}" method="post">
+
+    {% csrf_token %}
+    
+    <label for="country">Country:</label>
+    <select name="country">
+        {% for country in countries %}
+            <option value="{{ country.name }}">{{ country.name }}</option>
+        {% endfor %}
+    </select>
+    
+    <label for="course">Course:</label>
+    <select name="course">
+        {% for course in courses %}
+            <option value="{{ course.name }}">{{ course.name }}</option>
+        {% endfor %}
+    </select>
+    
+    <label for="level">Level:</label>
+    <select name="level">
+        {% for level in levels %}
+            <option value="{{ level.name }}">{{ level.name }}</option>
+        {% endfor %}
+    </select>
+    
+    <label for="prestige">Prestige:</label>
+    <select name="prestige">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+    </select>
+    
+    <input type="submit" value="Filter">
+</form>
+{% endblock %}

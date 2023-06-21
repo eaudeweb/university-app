@@ -1,0 +1,9 @@
+<!-- universities.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>Universities</h1>
+    {% for university in universities %}
+        <h2>{{ university.name }}</h2>
+    {% endfor %}
+{% endblock %}
