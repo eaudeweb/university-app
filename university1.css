@@ -1,7 +1,17 @@
 #top-bar {
     border-bottom: 5px;
 }
-.desc-cont .uniimage img {
-    width: 5px;
-    height: 5px;
+
+.title {
+    font: 5em serif;
+    text-align: center;
+    border-bottom: 5px;
+}
+
+#desc-cont  .uniimage img {
+    width: 40vw;
+    height: 40vw;
+}
+.description {
+    
 }
