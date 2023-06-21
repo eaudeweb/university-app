@@ -1,19 +1,105 @@
-<form method="POST">
-    {% csrf_token %}
-    <label for="location">Location:</label>
-    <select name="location" id="location">
-        <option value="">All</option>
-        <option value="New York">New York</option>
-        <option value="California">California</option>
-        <!-- Add more options as needed -->
-    </select>
-    <button type="submit">Filter</button>
-</form>
-
-<ul>
-    {% for university in universities %}
-        <li>{{ university.name }} - {{ university.location }}</li>
-    {% empty %}
-        <li>No universities found.</li>
-    {% endfor %}
-</ul>
+<!DOCTYPE html>
+ <html>
+    <head>
+        <link rel="stylesheet" href="mainstyle.css">
+    </head>
+    <body>
+        <div id="top-bar"> 
+            <div class="title">University Finder</div>
+        </div>
+        <div id="options">
+            <div class="searchbar">
+                <input type="text" placeholder="Search..">
+            </div>
+            <!-- make another table here in order to have two rows in one, one
+                with the name of the university and one with other information
+                about it -->
+            <div class="criteria">
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="location">Location:</label>
+                    <select name="location" id="location">
+                        <option value="">All</option>
+                        <option value="New York">New York</option>
+                        <option value="California">California</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    <button type="submit">Filter</button>
+                </form>
+            </div>
+            <div class="profile">
+                <img src="placeholder.jpeg">
+            </div>
+            <!-- use a table to put all of them on the same row and find out how to
+            change the size of each cell in the stylesheet -->
+        </div>  
+        <div id="container">
+        <ul>
+            {% for university in universities %}
+            <li>
+            <div class="university">
+            <table>
+                <tr>
+                    <th><img src="placeholder.jpeg"></th>
+                    <th>
+                        
+                        <h3>{{ university.name }}</h3>
+                        <table>
+                        <tr>
+                            <th>
+                                <p>{{ university.location }}</p>
+                            </th>
+                        </tr>
+                        </table>
+                    </th>
+                </tr>
+            </table>
+            </div>
+            </li>
+            {% empty %}
+            <li>No universities found.</li>
+            {% endfor %}
+        </ul>
+            <div class="university">
+                <table>
+                    <tr>
+                    <th><img src="placeholder.jpeg"></th>
+                    <th><p>university 2</p></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="university">
+                <table>
+                    <tr>
+                    <th><img src="placeholder.jpeg"></th>
+                    <th><p>university 3</p></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="university">
+                <table>
+                    <tr>
+                    <th><img src="placeholder.jpeg"></th>
+                    <th><p>university 4</p></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="university">
+                <table>
+                    <tr>
+                    <th><img src="placeholder.jpeg"></th>
+                    <th><p>university 5</p></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="university">
+                <table>
+                    <tr>
+                    <th><img src="placeholder.jpeg"></th>
+                    <th><p>university 6</p></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
