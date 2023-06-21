@@ -1,10 +1,11 @@
 <!DOCTYPE html>
  <html>
     <head>
-        <link rel="stylesheet" href="mainstyle.css">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'universities/mainstyle.css' %}">
     </head>
     <body>
-        <div id="top-bar"> 
+        <div id="top-bar">
             <div class="title">University Finder</div>
         </div>
         <div id="options">
@@ -28,11 +29,11 @@
                 </form>
             </div>
             <div class="profile">
-                <img src="placeholder.jpeg">
+                <img src="C:\Users\andre\Desktop\test.png">
             </div>
             <!-- use a table to put all of them on the same row and find out how to
             change the size of each cell in the stylesheet -->
-        </div>  
+        </div>
         <div id="container">
         <ul>
             {% for university in universities %}
@@ -40,9 +41,9 @@
             <div class="university">
             <table>
                 <tr>
-                    <th><img src="placeholder.jpeg"></th>
+                    <th><img src="C:\Users\andre\Desktop\test.png"></th>
                     <th>
-                        
+
                         <h3>{{ university.name }}</h3>
                         <table>
                         <tr>
@@ -60,46 +61,5 @@
             <li>No universities found.</li>
             {% endfor %}
         </ul>
-            <div class="university">
-                <table>
-                    <tr>
-                    <th><img src="placeholder.jpeg"></th>
-                    <th><p>university 2</p></th>
-                    </tr>
-                </table>
-            </div>
-            <div class="university">
-                <table>
-                    <tr>
-                    <th><img src="placeholder.jpeg"></th>
-                    <th><p>university 3</p></th>
-                    </tr>
-                </table>
-            </div>
-            <div class="university">
-                <table>
-                    <tr>
-                    <th><img src="placeholder.jpeg"></th>
-                    <th><p>university 4</p></th>
-                    </tr>
-                </table>
-            </div>
-            <div class="university">
-                <table>
-                    <tr>
-                    <th><img src="placeholder.jpeg"></th>
-                    <th><p>university 5</p></th>
-                    </tr>
-                </table>
-            </div>
-            <div class="university">
-                <table>
-                    <tr>
-                    <th><img src="placeholder.jpeg"></th>
-                    <th><p>university 6</p></th>
-                    </tr>
-                </table>
-            </div>
-        </div>
     </body>
 </html>

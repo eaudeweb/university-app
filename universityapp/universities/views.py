@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.template.response import TemplateResponse
 from .models import University
 
 def filter_universities(request):
@@ -11,4 +11,6 @@ def filter_universities(request):
     else:
         universities = University.objects.all()
 
-    return render(request, 'universities/filter.html', {'universities': universities})
+    t = TemplateResponse(request, 'universities/filter.html', {'universities': universities})
+
+    return t.render()
