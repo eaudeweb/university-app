@@ -1,0 +1,67 @@
+#top-bar {
+    border-bottom: 5px;
+}
+
+.title {
+    font: 5em serif;
+    text-align: center;
+    border-bottom: 5px;
+    width: 70%;
+    background-color: rgb(132, 0, 255);
+    left: 30px;
+    margin: auto;
+
+}
+
+.criteria {
+    height: 7vh;
+}
+
+.criteria img {
+    width: 50px;
+    height: 50px;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    float: right;
+    
+}
+
+.searchbar input[type=text] {
+    float: left;
+    padding: 6px;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    position: relative;
+  }
+
+#container {
+    gap: 10px;
+}
+
+.university img {
+    width: 100px;
+    height: 100px;
+}
+
+.university {
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    width: 70%;
+}
+
+
+/*body {
+    height:100vh;
+    background: rgb(35,39,48);
+    background: -moz-linear-gradient(36deg, rgba(35,39,48,1) 0%, rgba(38,38,125,1) 35%, rgba(42,58,96,1) 100%);
+    background: -webkit-linear-gradient(36deg, rgba(35,39,48,1) 0%, rgba(38,38,125,1) 35%, rgba(42,58,96,1) 100%);
+    background: linear-gradient(36deg, rgba(35,39,48,1) 0%, rgb(36, 36, 58) 35%, rgba(42,58,96,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#232730",endColorstr="#2a3a60",GradientType=1);
+    padding:0px;    
+}*/
