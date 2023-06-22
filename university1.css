@@ -1,0 +1,27 @@
+#top-bar {
+    border-bottom: 5px;
+}
+
+.title {
+    font: 5em serif;
+    text-align: center;
+    border-bottom: 5px;
+    width: 70%;
+    background-color: rgb(132, 0, 255);
+    left: 30px;
+    margin: auto;
+}
+
+#desc-cont {
+
+}
+
+#desc-cont  .uniimage img {
+    width: 40vw;
+    height: 40vw;
+}
+.description img {
+    width: 10vw;
+    height: 10vw;
+}
+
