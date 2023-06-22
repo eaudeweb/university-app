@@ -18,6 +18,11 @@
                 with the name of the university and one with other information
                 about it -->
             <div class="criteria">
+                <table>
+                <tr>
+
+                <td> 
+
                 <form method="POST">
                     {% csrf_token %}
                     <label for="city">City:</label>
@@ -29,6 +34,36 @@
                     </select>
                     <button type="submit">Filter</button>
                 </form>
+            
+                </td>
+                <td>
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="country">Country:</label>
+                    <select name="country" id="country">
+                        <option value="">All</option>
+                        <option value="Country1">Country 1</option>
+                        <option value="Country2">Country 2</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    <button type="submit">Filter</button>
+                </form>
+                </td>
+                <td>
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="domain">Domain:</label>
+                    <select name="domain" id="domain">
+                        <option value="">All</option>
+                        <option value="Domain1">Domain 1</option>
+                        <option value="Domain2">Domain 2</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    <button type="submit">Filter</button>
+                </form>
+                </td>          
+                </tr>
+            </table>
             </div>
             <div class="profile">
                 <img src="{}">
@@ -40,6 +75,7 @@
         <ul style="list-style: none;">
             {% for university in universities %}
             <li>
+                <a style="display:block" href="/university/?University={{ university.name }}">
             <div class="university">
             <table>
                 <tr>
@@ -58,6 +94,7 @@
                 </tr>
             </table>
             </div>
+            </a>
             </li>
             {% empty %}
             <li>No universities found.</li>
