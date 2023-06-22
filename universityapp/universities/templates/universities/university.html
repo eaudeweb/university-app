@@ -1,7 +1,8 @@
 <!DOCTYPE html>
  <html>
     <head>
-        <link rel="stylesheet" href="university.css">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'universities/university.css' %}">
     </head>
     <div id="top-bar"> 
         <div class="title">University Finder</div>
@@ -9,14 +10,14 @@
     <div id="desc-cont">
         <table>
             <tr>
-                <th><div class="uniimage"><img src="placeholder.jpeg"></div></th>
+                <th><div class="uniimage"><img src="{{university.image.url}}"></div></th>
                 <td>
                     <table>
                     <tr>
-                        <th><tr><div class= "uniname"> university of ballin</th></tr></div>
+                        <th><tr><div class= "uniname"> {{university.name}}</th></tr></div>
                     </tr>
                     <tr>
-                        <th><h2>Located in harghita</h2></th>
+                        <th><h2>{{university.city}}, {{university.country}}</h2></th>
                     </tr>
 
                     <td><tr>
@@ -33,7 +34,7 @@
         </table>
         <div class="description">
             <h1>Description</h1>
-            bfhr gji rwhigv wgie hewji hego hwjfdw bwjif whfjwe ghewji qehjw hgjiwg hwjog hwrjog wrhgjow hgjowr hgwroghwjogwrhgjowr hrwjog hjogh ojghworg bfhr gji rwhigv wgie hewji hego hwjfdw bwjif whfjwe ghewji qehjw hgjiwg hwjog hwrjog wrhgjow hgjowr hgwroghwjogwrhgjowr hrwjog hjogh ojghworg 
+            {{university.description}}
             <h1>Time</h1>
             <h1>Location</h1>
             <h1>Price</h1>
@@ -44,7 +45,7 @@
             </table>
             <table>
                 <tr>
-                    <th><img src="user.png"></th>
+                    <th><img src=""></th>
                     <th>
                         <table>
                             <tr><th>commenter name</th></tr>
