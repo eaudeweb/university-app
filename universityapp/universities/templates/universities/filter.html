@@ -23,7 +23,7 @@
 
                 <td> 
 
-                <form method="POST">
+                <form method="get">
                     {% csrf_token %}
                     <label for="city">City:</label>
                     <select name="city" id="city">
@@ -32,13 +32,7 @@
                         <option value="Delft">Delft</option>
                         <!-- Add more options as needed -->
                     </select>
-                    <button type="submit">Filter</button>
-                </form>
-            
-                </td>
-                <td>
-                <form method="POST">
-                    {% csrf_token %}
+
                     <label for="country">Country:</label>
                     <select name="country" id="country">
                         <option value="">All</option>
@@ -46,12 +40,7 @@
                         <option value="Country2">Country 2</option>
                         <!-- Add more options as needed -->
                     </select>
-                    <button type="submit">Filter</button>
-                </form>
-                </td>
-                <td>
-                <form method="POST">
-                    {% csrf_token %}
+
                     <label for="domain">Domain:</label>
                     <select name="domain" id="domain">
                         <option value="">All</option>
@@ -59,7 +48,9 @@
                         <option value="Domain2">Domain 2</option>
                         <!-- Add more options as needed -->
                     </select>
+
                     <button type="submit">Filter</button>
+
                 </form>
                 </td>          
                 </tr>
