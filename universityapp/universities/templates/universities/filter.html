@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'universities/mainstyle.css' %}">
+</head>
+<body>
+    <div id="top-bar">
+        <div class="title">University Finder</div>
+    </div>
+    <div id="options">
+        <div class="searchbar">
+            <form method="GET">
+                <input type="text" placeholder="Search.." name="search" id="search">
+            </form>
+        </div>
+        <div class="criteria">
+            <table>
+                <tr>
+                    <td>
+                        <form method="POST" id="filter-form">
+                            {% csrf_token %}
+                            <label for="country">Country:</label>
+                            <select name="country" id="country">
+                                <option value="">All</option>
+                                {% for country in countries %}
+                                <option value="{{ country }}">{{ country }}</option>
+                                {% endfor %}
+                                <!-- Add more options as needed -->
+                            </select>
+
+                            <label for="city">City:</label>
+                            <select name="city" id="city">
+                                <option value="" selected>All</option>
+                                {% for city in cities %}
+                                <option value="{{ city }}" >{{ city }}</option>
+                                {% endfor %}
+                                <!-- Add more options as needed -->
+                            </select>
+
+                            <label for="domain">Domain:</label>
+                            <select name="domain" id="domain">
+                                <option value="" selected>All</option>
+                                {% for domain in domains %}
+                                <option value="{{ domain }}">{{ domain }}</option>
+                                {% endfor %}
+                                <!-- Add more options as needed -->
+                            </select>
+
+                            <button type="submit">Filter</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="profile">
+            <img src="{% static 'university_page/user.png' %}">
+        </div>
+    </div>
+    <div id="container">
+        <ul style="list-style: none;">
+            {% for university in universities %}
+            <li>
+                <a style="display:block" href="/university/?University={{ university.name }}">
+                    <div class="university">
+                        <table>
+                            <tr>
+                                <th><img src="{{ university.image.url }}"></th>
+                                <th>
+                                    <h3>{{ university.name }}</h3>
+                                    <table>
+                                        <tr>
+                                            <th>
+                                                <p>{{ university.location }}</p>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                </a>
+            </li>
+            {% empty %}
+            <li>No universities found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize the selected variables
+            var selectedCountry = $('#country').val();
+            var selectedCity = $('#city').val();
+            var selectedDomain = $('#domain').val();
+
+            // Event listener for form inputs change
+            $('#filter-form select').on('change', function () {
+                // Update the selected variables
+                selectedCountry = $('#country').val();
+                selectedCity = $('#city').val();
+                selectedDomain = $('#domain').val();
+
+                // Automatically submit the filter form
+                $('#filter-form').submit();
+            });
+        });
+    </script>
+</body>
+</html>

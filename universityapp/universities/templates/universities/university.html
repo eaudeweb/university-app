@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'universities/university.css' %}">
+    </head>
+    <div id="top-bar">
+        <div class="title">University Finder</div>
+    </div>
+    <div id="desc-cont">
+        <table>
+            <tr>
+                <th><div class="uniimage"><img src="{{university.image.url}}"></div></th>
+                <td>
+                    <table>
+                    <tr>
+                        <th><tr><div class= "uniname"> {{university.name}}</th></tr></div>
+                    </tr>
+                    <tr>
+                        <th><h2>{{university.city}}, {{university.country}}</h2></th>
+                    </tr>
+
+                    <td><tr>
+                        <td><h2>Average Reviews:</h2></td>
+                        <td><div class="revimg"> <img src="{% static 'university_page/revimg1.png' %}" /></div></td>
+                        <td><div class="revimg"> <img src="{% static 'university_page/revimg1.png' %}" /></div></td>
+                        <td><div class="revimg"> <img src="{% static 'university_page/revimg1.png' %}" /></div></td>
+                        <td><div class="revimg"> <img src="{% static 'university_page/revimg2.png' %}" /></div></td>
+                        <td><div class="revimg"> <img src="{% static 'university_page/revimg2.png' %}" /></div></td>
+                    </td></tr>
+                </table>
+                </td>
+            </tr>
+        </table>
+        <div class="description">
+            <hr/>
+            <h1>Description</h1>
+                {{university.description}}
+            <hr/>
+
+            <table id="details">
+
+                <tr>
+
+                    <td><h1>Time</h1></td>
+
+                    <td>{{university.duration}}</td>
+                </tr>
+                <tr>
+                    <td><h1>Location</h1></td>
+
+                    <td>{{university.city}}, {{university.country}}</td>
+                </tr>
+                <tr>
+                    <td><h1>Price</h1></td>
+
+                    <td>{{university.cost}}</td>
+                </tr>
+
+            </table>
+
+            <hr/>
+
+            <h1>More Details (such as cost of living and other criteria for admission)</h1>
+
+            <ul id="more-details">
+                <li>{{university.details}}</li>
+
+            </ul>
+
+            <hr/>
+            <h1>Ratings by other users</h1>
+
+            <table id="ratings">
+
+                <tr>
+                    <th><img src="{% static 'university_page/user.png' %}"></th>
+                    <th>
+                        <table>
+                            <tr><th><b>John Doe</b></th></tr>
+                            <tr><th><p>This university is awesome! I learned a lot and had fun.</p></th></tr>
+                        </table>
+                    </th>
+                </tr>
+                <tr>
+                    <th><img src="{% static 'university_page/user.png' %}"></th>
+                    <th>
+                        <table>
+                            <tr><th><b>Jane Smith</b></th></tr>
+                            <tr><th><p>This university is terrible! I wasted my time and money.</p></th></tr>
+                        </table>
+                    </th>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+ </html>

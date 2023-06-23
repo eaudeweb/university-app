@@ -1,0 +1,61 @@
+#top-bar {
+    border-bottom: 5px;
+}
+
+.title {
+    font: 5em serif;
+    text-align: center;
+    border-bottom: 10px;
+    width: 100%;
+    background-color: rgb(132, 0, 255);
+    left: 30px;
+    margin: auto;
+}
+
+#desc-cont {
+}
+
+    #desc-cont .uniimage img {
+        width: 50vw;
+        height: 50vw;
+    }
+
+.description img {
+    width: 10vw;
+    height: 10vw;
+}
+
+.revimg img {
+    width: 5vw;
+    height: 5vw;
+}
+
+.uniname {
+    font: 3em serif;
+}
+
+hr {
+    border-top: 1px solid black;
+}
+
+#details {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#more-details {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#ratings {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    #ratings img {
+        border-radius: 50%;
+    }
