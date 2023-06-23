@@ -1,10 +1,9 @@
 <!DOCTYPE html>
  <html>
     <head>
-        {% load static %}
         <link rel="stylesheet" href="{% static 'universities/university.css' %}">
     </head>
-    <div id="top-bar">
+    <div id="top-bar"> 
         <div class="title">University Finder</div>
     </div>
     <div id="desc-cont">
@@ -22,39 +21,76 @@
 
                     <td><tr>
                         <td><h2>Average Reviews:</h2></td>
-                        <td><div class="revimg"> <img src="universityapp/universities/media/revimg1.png" /></div></td>
-                        <td><div class="revimg"> <img src="universityapp/universities/media/revimg1.png" /></div></td>
-                        <td><div class="revimg"> <img src="universityapp/universities/media/revimg1.png" /></div></td>
-                        <td><div class="revimg"> <img src="universityapp/universities/media/revimg2.png" /></div></td>
-                        <td><div class="revimg"> <img src="universityapp/universities/media/revimg2.png" /></div></td>
+                        <td><div class="revimg"> <img src="{% static 'university_page/university/revimg1' %}" /></div></td>
+                        <td><div class="revimg"> <img src="{% static 'university_page/university/revimg1' %}" /></div></td>
+                        <td><div class="revimg"> <img src="{% static 'university_page/university/revimg1' %}" /></div></td>
+                        <td><div class="revimg"> <img src="{% static 'university_page/university/revimg2' %}" /></div></td>
+                        <td><div class="revimg"> <img src="{% static 'university_page/university/revimg2' %}" /></div></td>
                     </td></tr>
                 </table>
                 </td>
             </tr>
         </table>
         <div class="description">
+            <hr/>
             <h1>Description</h1>
-            <p>{{university.description}}</p>
-            <h1>Time</h1>
-            <h1>Location</h1>
-            <h1>Price</h1>
-            <h1>More Details (such as cost of living and other criteria for admission)</h1>
-            <h1>Ratings by other users</h1>
-            <table>
+                {{university.description}}
+            <hr/>
+
+            <table id="details">
+                
+                <tr>
+
+                    <td><h1>Time</h1></td>
+
+                    <td>4 years</td>
+                </tr>
+                <tr>
+                    <td><h1>Location</h1></td>
+
+                    <td>Harghita, Romania</td>
+                </tr>
+                <tr>
+                    <td><h1>Price</h1></td>
+
+                    <td>$10,000 per year</td>
+                </tr>
 
             </table>
-            <table>
+
+            <hr/>
+
+            <h1>More Details (such as cost of living and other criteria for admission)</h1>
+
+            <ul id="more-details">
+                <li>Cost of living: $500 per month</li>
+                <li>Admission criteria: High school diploma, SAT score above 1200, TOEFL score above 80</li>
+
+            </ul>
+
+            <hr/>
+            <h1>Ratings by other users</h1>
+
+            <table id="ratings">
+                
                 <tr>
-                    <th><img src="universityapp/universities/media/user.png"></th>
+                    <th><img src="{% static 'university_page/university/user.png' %}"></th>
                     <th>
                         <table>
-                            <tr><th>commenter name</th></tr>
-                            <tr><th><h3>comment</h3></th></tr>
+                            <tr><th><b>John Doe</b></th></tr>
+                            <tr><th><p>This university is awesome! I learned a lot and had fun.</p></th></tr>
                         </table>
                     </th>
                 </tr>
-
-
+                <tr>
+                    <th><img src="{% static 'university_page/university/user.png' %}"></th>
+                    <th>
+                        <table>
+                            <tr><th><b>Jane Smith</b></th></tr>
+                            <tr><th><p>This university is terrible! I wasted my time and money.</p></th></tr>
+                        </table>
+                    </th>
+                </tr>
 
             </table>
         </div>
