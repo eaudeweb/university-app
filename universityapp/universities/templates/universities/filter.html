@@ -3,6 +3,7 @@
 <head>
     {% load static %}
     <link rel="stylesheet" href="{% static 'universities/mainstyle.css' %}">
+    <script src="{% static 'universities/script.js' %}"></script> 
 </head>
 <body>
     <div id="top-bar">
@@ -13,6 +14,10 @@
             <form method="GET">
                 <input type="text" placeholder="Search.." name="search" id="search">
             </form>
+            <div class="dark">
+                <button onclick="Dark()">Dark Mode</button>
+                <button onclick="Light()">Light Mode</button>
+            </div>
         </div>
         <div class="criteria">
             <table>
