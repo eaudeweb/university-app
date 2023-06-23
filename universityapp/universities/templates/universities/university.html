@@ -3,11 +3,17 @@
     <head>
         {% load static %}
         <link rel="stylesheet" href="{% static 'universities/university.css' %}">
+        <script src="{%static 'universities/script.js' %}"></script>
     </head>
     <div id="top-bar">
         <div class="title">University Finder</div>
     </div>
     <div id="desc-cont">
+             <div class="dark">
+            <button onclick="Dark()">Dark Mode</button>
+            <button onclick="Light()">Light Mode</button>
+    
+        </div>
         <table>
             <tr>
                 <th><div class="uniimage"><img src="{{university.image.url}}"></div></th>
