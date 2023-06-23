@@ -5,8 +5,8 @@
 .title {
     font: 5em serif;
     text-align: center;
-    border-bottom: 5px;
-    width: 70%;
+    border-bottom: 10px;
+    width: 100%;
     background-color: rgb(132, 0, 255);
     left: 30px;
     margin: auto;
